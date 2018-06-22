@@ -1,0 +1,15 @@
+version: 0.2
+phases:
+    install:
+        commands:
+            - 'yarn install'
+    pre_build:
+        commands: []
+    build:
+        commands:
+            - 'yarn run build'
+    post_build:
+        commands: []
+    serve:
+        commands:
+            - 'aws s3 sync --acl public-read --delete build/ "s3://"${BUCKET_NAME}""'
