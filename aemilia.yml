@@ -5,7 +5,7 @@ build:
     phases:
         pre_build:
             commands:
-                - 'yarn install'
+                - 'exit 1'
         build:
             commands:
                 - 'yarn run build'
